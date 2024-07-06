@@ -1,0 +1,26 @@
+spring:
+  security:
+    oauth2:
+      resource-server:
+        jwt:
+          jwk-set-uri: http://localhost:8080/realms/provaFinaleAngular/protocol/openid-connect/certs
+          issuer-uri: http://localhost:8080/realms/provaFinaleAngular
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/progettoPiattaformeDB
+    password: Matteo2003
+    username: postgres
+
+  jpa:
+    database: POSTGRESQL
+    show-sql: true
+    generate-ddl: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        ddl-auto: update
+        jdbc:
+          lob:
+            non_contextual_creation: true
+server:
+  port: 9090
